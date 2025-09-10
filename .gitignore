@@ -1,0 +1,1 @@
+.DS_Store\n*.log\n*.env\nconfig/service_account.json\n/db/*.csv\n/db/*.json
