@@ -1,1 +1,29 @@
-.DS_Store\n*.log\n*.env\nconfig/service_account.json\n/db/*.csv\n/db/*.json
+# Système et IDE
+.DS_Store
+*.swp
+*.swo
+*.idea
+*.vscode
+*.log
+
+# Ruby / Bundler
+*.gem
+*.rbc
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/coverage/
+/spec/reports/
+
+# Fichiers sensibles
+*.env
+config/service_account.json
+
+# Bases de données / exports
+/db/*.csv
+/db/*.json
+
+# Node / front si jamais tu as du JS
+/node_modules/
+/yarn-error.log
