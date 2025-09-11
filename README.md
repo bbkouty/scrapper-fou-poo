@@ -39,7 +39,7 @@ ruby app.rb
 
 ## 💻 Structure du projet
 ```
-mon_projet/
+ruby-scrapper-poo/
 ├── lib/
 │   ├── app/
 │   │   ├── scraper_service.rb
@@ -52,7 +52,13 @@ mon_projet/
 │   └── emails.json
 ├── config/
 │   └── service_account.json
-├── main.rb
+├── spec/
+│   ├── spec_helper.rb
+│   ├── scraper_service_spec.rb
+│   ├── scrapper_spec.rb
+│   ├── table_view_spec.rb
+│   └── menu_spec.rb
+├── app.rb
 ├── Gemfile
 ├── Gemfile.lock
 └── README.md

@@ -5,19 +5,19 @@ require_relative 'table_view'
 require 'colorize'
 
 class Menu
-  emails = {}  # initialisation globale
+  @@emails = {}  # initialisation globale
 
   def self.start
     loop do
-      puts "\n====== SCRAPPER FOU POO ======".colorize(:light_white)
+      puts "\n====== SCRAPPER FOU POO ======".colorize(:cyan).bold
       puts "\n======= MENU PRINCIPAL =======".colorize(:light_white)
-      puts "1. Scraper les emails"
-      puts "2. Afficher les résultats"
-      puts "3. Sauvegarder en JSON"
-      puts "4. Sauvegarder en CSV"
-      puts "5. Sauvegarder dans Google Sheets"
-      puts "6. Quitter"
-      print "👉 Choix : "
+      puts "1. Scraper les emails".colorize(:light_black)
+      puts "2. Afficher les résultats".colorize(:light_black)
+      puts "3. Sauvegarder en JSON".colorize(:light_black)
+      puts "4. Sauvegarder en CSV".colorize(:light_black)
+      puts "5. Sauvegarder dans Google Sheets".colorize(:light_black)
+      puts "6. Quitter".colorize(:red)
+      print "\n👉 Choix : ".colorize(:light_white)
 
       choice = gets.chomp.to_i
       case choice
@@ -34,14 +34,12 @@ class Menu
         check_emails
         Scrapper.new(@@emails).save_as_csv
       when 5
-        error_503
-        # check_emails
-        # Scrapper.new(@@emails).save_as_spreadsheet
+        save_to_google
       when 6
-        puts "👋 Au revoir !".colorize(:blue)
+        puts "👋 Au revoir !".colorize(:red)
         break
       else
-        puts "⚠️ Choix invalide, réessaie.".colorize(:red)
+        puts "⚠️ Choix invalide, réessayez.".colorize(:light_red)
       end
     end
   end
@@ -64,4 +62,13 @@ class Menu
       puts "\e[33mConseil:\e[0m Réessayez plus tard service en construction."
       puts
     end
+
+    def self.save_to_google
+      if !File.exist?("config/service_account.json")
+
+        Scrapper.new(@@emails).save_as_spreadsheet
+      else
+        error_503
+    end
+end
 end

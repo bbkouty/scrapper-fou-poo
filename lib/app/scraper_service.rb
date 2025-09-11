@@ -25,7 +25,7 @@ class ScraperService
         if encoded_email
           email = decode_cf_email(encoded_email)
           emails[ville_name] = email
-          puts "✅ #{ville_name} → #{email}"
+          puts "✅ #{ville_name} → #{email}".colorize(:green)
         else
           puts "⚠️ Aucun email trouvé pour #{ville_name}"
         end

@@ -121,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   colorize
   csv
+  google-apis-sheets_v4
   google_drive
   json
   nokogiri

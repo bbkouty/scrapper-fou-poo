@@ -13,6 +13,7 @@ gem "pry"
 gem "nokogiri"
 gem "open-uri"
 gem "google_drive"
+gem "google-apis-sheets_v4"
 gem "json"
 gem "csv"
 
